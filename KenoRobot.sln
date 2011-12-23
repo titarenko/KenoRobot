@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrsnes.Infrastructure.Impl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cqrsnes.Test", "..\Cqrsnes\Cqrsnes.Test\Cqrsnes.Test.csproj", "{AF6ABA8C-DEF4-4F3A-8534-CFF62B899C34}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cqrsnes", "Cqrsnes", "{3F1E46FE-E9CB-41FB-AFE2-14802258D259}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +36,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3FD142CF-F7FA-44EB-802B-C5D79828FE42} = {3F1E46FE-E9CB-41FB-AFE2-14802258D259}
+		{0C31F901-872B-497D-876C-DCF3973534CB} = {3F1E46FE-E9CB-41FB-AFE2-14802258D259}
+		{AF6ABA8C-DEF4-4F3A-8534-CFF62B899C34} = {3F1E46FE-E9CB-41FB-AFE2-14802258D259}
 	EndGlobalSection
 EndGlobal

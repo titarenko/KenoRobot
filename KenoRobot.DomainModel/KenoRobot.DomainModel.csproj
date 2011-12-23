@@ -45,8 +45,10 @@
     <Compile Include="Entities\Drawing.cs" />
     <Compile Include="Entities\History.cs" />
     <Compile Include="CommandHandler.cs" />
+    <Compile Include="Entities\Robot.cs" />
     <Compile Include="Events\DrawingAdded.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Clock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
