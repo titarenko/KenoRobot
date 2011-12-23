@@ -1,0 +1,3 @@
+[submodule "Cqrsnes"]
+	path = Cqrsnes
+	url = git@github.com:titarenko/Cqrsnes.git
