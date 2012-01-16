@@ -45,10 +45,18 @@
     <Compile Include="Entities\Drawing.cs" />
     <Compile Include="Entities\History.cs" />
     <Compile Include="CommandHandler.cs" />
+    <Compile Include="Entities\Pair.cs" />
+    <Compile Include="Entities\PairStatistics.cs" />
+    <Compile Include="Entities\PairStatisticsCollection.cs" />
     <Compile Include="Entities\Robot.cs" />
+    <Compile Include="EventHandler.cs" />
     <Compile Include="Events\DrawingAdded.cs" />
+    <Compile Include="Events\PairDrawn.cs" />
+    <Compile Include="Events\PairDrawProbabilityChanged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Clock.cs" />
+    <Compile Include="Utilities\IPairIdCollection.cs" />
+    <Compile Include="Utilities\PersistentPairIdCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
