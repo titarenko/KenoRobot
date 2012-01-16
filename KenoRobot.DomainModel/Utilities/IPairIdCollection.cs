@@ -1,5 +1,4 @@
 using System;
-using KenoRobot.DomainModel.Entities;
 
 namespace KenoRobot.DomainModel.Utilities
 {
@@ -9,14 +8,17 @@ namespace KenoRobot.DomainModel.Utilities
     public interface IPairIdCollection
     {
         /// <summary>
-        /// Accesses identifier for given pair.
+        /// Returns identifier for given pair of balls.
         /// </summary>
-        /// <param name="pair">
-        /// The pair to get identifier for.
+        /// <param name="ball1">
+        /// The ball 1.
+        /// </param>
+        /// <param name="ball2">
+        /// The ball 2.
         /// </param>
         /// <returns>
         /// Identifier for given pair.
         /// </returns>
-        Guid this[Pair pair] { get; }
+        Guid GetId(byte ball1, byte ball2);
     }
 }

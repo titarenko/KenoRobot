@@ -2,16 +2,15 @@
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using KenoRobot.DomainModel.Entities;
 
 namespace KenoRobot.DomainModel.Utilities
 {
     /// <summary>
-    /// Contains collection of identifiers for pairs.
+    /// Implements file storage for ids of pairs.
     /// </summary>
     public class PersistentPairIdCollection : IPairIdCollection
     {
-        private const string FILENAME = "ids.bin";
+        private const string FILE_NAME = "ids.bin";
 
         private readonly Guid[] ids;
 
@@ -22,7 +21,7 @@ namespace KenoRobot.DomainModel.Utilities
         {
             try
             {
-                using (var stream = new FileStream(FILENAME, FileMode.Open))
+                using (var stream = new FileStream(FILE_NAME, FileMode.Open))
                 {
                     ids = (Guid[]) new BinaryFormatter().Deserialize(stream);
                 }
@@ -30,7 +29,7 @@ namespace KenoRobot.DomainModel.Utilities
             catch (Exception)
             {
                 ids = Enumerable.Range(0, 3160).Select(x => Guid.NewGuid()).ToArray();
-                using (var stream = new FileStream(FILENAME, FileMode.CreateNew))
+                using (var stream = new FileStream(FILE_NAME, FileMode.CreateNew))
                 {
                     new BinaryFormatter().Serialize(stream, ids);
                 }
@@ -38,17 +37,20 @@ namespace KenoRobot.DomainModel.Utilities
         }
 
         /// <summary>
-        /// Accesses identifier for given pair.
+        /// Returns identifier for given pair of balls.
         /// </summary>
-        /// <param name="pair">
-        /// The pair to get identifier for.
+        /// <param name="ball1">
+        /// The ball 1.
+        /// </param>
+        /// <param name="ball2">
+        /// The ball 2.
         /// </param>
         /// <returns>
         /// Identifier for given pair.
         /// </returns>
-        public Guid this[Pair pair]
+        public Guid GetId(byte ball1, byte ball2)
         {
-            get { return ids[GetPairIndex(pair.Ball1, pair.Ball2)]; }
+            return ids[GetPairIndex(ball1, ball2)];
         }
 
         private int GetPairIndex(byte ball1, byte ball2)
